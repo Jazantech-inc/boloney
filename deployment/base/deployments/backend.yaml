@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          resources:
+            requests:
+              cpu: 470m
+              memory: 1024Mi
+            limits:
+              cpu: 470m
+              memory: 2048Mi
+          ports:
+            - containerPort: 7351
+            - containerPort: 7350
+            - containerPort: 7349
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: BACKEND_NAME
+              value: "BACKEND"
+      initContainers:
+        - name: init-mydb
+          image: busybox:latest
+          command:
+            ["sh", "-c", "until nslookup postgres.$(POD_NAMESPACE).svc.cluster.local; do echo waiting for mydb; sleep 2; done; sleep 10"]
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace

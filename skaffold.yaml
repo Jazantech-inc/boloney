@@ -1,0 +1,29 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: boloney
+build:
+  tagPolicy:
+    sha256: {}
+  local:
+    concurrency: 0
+  artifacts:
+    - image: frontend
+      docker:
+        dockerfile: Dockerfile.frontend
+        buildArgs:
+          VITE_ENV: development
+          VITE_BACKEND_URL: backend.localhost
+          VITE_API_URL: api.localhost
+          VITE_USE_SSL: "false"
+          VITE_API_PORT: "80"
+          VITE_TOOLKIT_URL: http://localhost:5001
+    - image: backend
+      docker:
+        dockerfile: Dockerfile.backend
+manifests:
+  kustomize:
+    paths:
+      - ./deployment/local/workloads
+deploy:
+  kubectl: {}

@@ -1,0 +1,60 @@
+:root {
+  font-family: "itc-clearface-bold";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+#container {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  left: 12.5vw;
+  top: 10vh;
+}
+
+canvas {
+  position: fixed;
+  top: 5vh;
+  left: 12vw;
+  z-index: 5;
+}
+
+@font-face {
+  font-family: "itc-clearface-black-italic";
+  src: url("./assets/fonts/itc-clearface-W03-Black-italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-black";
+  src: url("./assets/fonts/itc-clearface-W03-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-bold-italic";
+  src: url("./assets/fonts/itc-clearface-W03-Bold-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-bold";
+  src: url("./assets/fonts/itc-clearface-W03-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-heavy-italic";
+  src: url("./assets/fonts/itc-clearface-W03-Heavy-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-heavy";
+  src: url("./assets/fonts/itc-clearface-W03-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-regular-italic";
+  src: url("./assets/fonts/itc-clearface-W03-Regular-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "itc-clearface-regular";
+  src: url("./assets/fonts/itc-clearface-W03-Regular.otf") format("opentype");
+}

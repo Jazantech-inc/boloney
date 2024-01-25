@@ -1,0 +1,31 @@
+{
+  "name": "boloney",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Boloney game",
+  "packageManager": "yarn@3.2.2",
+  "engines": {
+    "node": "^18.16.0"
+  },
+  "workspaces": [
+    "frontend/",
+    "backend/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://Kryha-io@dev.azure.com/Kryha-io/Aleo/_git/zk-liars-dice"
+  },
+  "scripts": {
+    "build": "yarn workspaces foreach --parallel run build",
+    "test": "yarn workspaces foreach --parallel run test",
+    "coverage": "yarn workspaces foreach --parallel run coverage",
+    "format": "prettier --write --loglevel warn '**/*.*'",
+    "lint": "yarn workspaces foreach --parallel run lint"
+  },
+  "author": "Kryha",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "typescript": "^4.7.4"
+  }
+}
